@@ -1,0 +1,23 @@
+<!-- mkdir -p /home/claude/expiry_project/devices/templates/devices
+cat > /home/claude/expiry_project/devices/templates/devices/update_expiry.html << 'EOF' -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Expiry</title>
+</head>
+<body style="font-family: sans-serif; max-width: 500px; margin: 60px auto;">
+    <h2>Excel Upload — Update Expiry Dates</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="excel_file" accept=".xlsx" required>
+        <br><br>
+        <button type="submit">Run Update</button>
+    </form>
+    <p style="color:gray; font-size: 13px;">
+        Excel file mein "Link" header wala column hona chahiye, jismein har row mein edit page ka URL ho.
+        Process complete hote hi result file download ho jayegi.
+    </p>
+</body>
+</html>
+<!-- EOF
+echo done -->
